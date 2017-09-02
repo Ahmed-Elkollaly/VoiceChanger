@@ -89,11 +89,11 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stop"{
-            print("HELL")
+            
             let playSounds = segue.destination as! PlaySoundsViewController
             let audioFileURL = sender as! URL
             playSounds.audioFileURL = audioFileURL
-            print("HELL1")
+
             
         }
     }

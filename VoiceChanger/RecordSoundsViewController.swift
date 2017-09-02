@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     
     //Properties
     @IBOutlet weak var recordButton: UIButton!
@@ -16,6 +17,7 @@ class RecordSoundsViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     enum PlayingState {case playing,notPlaying}
     var playingState :PlayingState = .notPlaying
+    var audioRecorder :AVAudioRecorder!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,12 +43,40 @@ class RecordSoundsViewController: UIViewController {
     @IBAction func startRecording(_ sender: Any) {
         playingState = .playing
         configureUI()
+        
+        let sysPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
+        let recordingFileName = "recording.wave"
+        let pathArray :[String] = [sysPath,recordingFileName]
+        let fileURL = URL(fileURLWithPath: pathArray.joined(separator: "/"))
+        
+        //Get the shared audio session
+        let session = AVAudioSession.sharedInstance()
+        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with: .defaultToSpeaker)
+        
+        
+        //Provides audio recording capability
+        try! audioRecorder = AVAudioRecorder(url: fileURL, settings: [:])
+        audioRecorder.isMeteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
+        
+        
+        
     }
     //Mark - Stop Recording
     @IBAction func stopRecording(_ sender: Any) {
         playingState = .notPlaying
         configureUI()
+        let session = AVAudioSession.sharedInstance()
+        try! session.setActive(false)
     }
-
+    //Mark -After Recording Has Finished
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            
+        }else{
+            print("Audio is finished unsccessfully")
+        }
+    }
 }
 

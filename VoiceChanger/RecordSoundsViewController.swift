@@ -44,10 +44,12 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
         playingState = .playing
         configureUI()
         
+        
+        //Create the file URL of the recored audio
         let sysPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingFileName = "recording.wave"
         let pathArray :[String] = [sysPath,recordingFileName]
-        let fileURL = URL(fileURLWithPath: pathArray.joined(separator: "/"))
+        let fileURL = URL(string: pathArray.joined(separator: "/"))
         
         //Get the shared audio session
         let session = AVAudioSession.sharedInstance()
@@ -55,8 +57,10 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
         
         
         //Provides audio recording capability
-        try! audioRecorder = AVAudioRecorder(url: fileURL, settings: [:])
+        try! audioRecorder = AVAudioRecorder(url: fileURL!, settings: [:])
+        
         audioRecorder.isMeteringEnabled = true
+        audioRecorder.delegate = self
         audioRecorder.prepareToRecord()
         audioRecorder.record()
         
@@ -67,15 +71,30 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     @IBAction func stopRecording(_ sender: Any) {
         playingState = .notPlaying
         configureUI()
+        audioRecorder.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)
     }
     //Mark -After Recording Has Finished
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        
         if flag {
+           
+            performSegue(withIdentifier: "stop", sender: audioRecorder.url)
             
         }else{
             print("Audio is finished unsccessfully")
+        }
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stop"{
+            print("HELL")
+            let playSounds = segue.destination as! PlaySoundsViewController
+            let audioFileURL = sender as! URL
+            playSounds.audioFileURL = audioFileURL
+            print("HELL1")
+            
         }
     }
 }

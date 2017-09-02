@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7BAED711F5B0A7E00510E87 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */; };
+		F7BAED721F5B140000510E87 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */; };
 		F7C133081F5A7CC2001C3C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133071F5A7CC2001C3C55 /* AppDelegate.swift */; };
 		F7C1330A1F5A7CC2001C3C55 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */; };
 		F7C1330D1F5A7CC3001C3C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C1330B1F5A7CC3001C3C55 /* Main.storyboard */; };
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		F7C133041F5A7CC2001C3C55 /* VoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C133071F5A7CC2001C3C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 				F7C1330E1F5A7CC3001C3C55 /* Assets.xcassets */,
 				F7C133101F5A7CC3001C3C55 /* LaunchScreen.storyboard */,
 				F7C133131F5A7CC3001C3C55 /* Info.plist */,
+				F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */,
 			);
 			path = VoiceChanger;
 			sourceTree = "<group>";
@@ -263,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C1330A1F5A7CC2001C3C55 /* RecordSoundsViewController.swift in Sources */,
+				F7BAED711F5B0A7E00510E87 /* PlaySoundsViewController.swift in Sources */,
 				F7C133081F5A7CC2001C3C55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BAED721F5B140000510E87 /* RecordSoundsViewController.swift in Sources */,
 				F7C1331D1F5A7CC3001C3C55 /* VoiceChangerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +522,7 @@
 				F7C1332E1F5A7CC3001C3C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7C1332F1F5A7CC3001C3C55 /* Build configuration list for PBXNativeTarget "VoiceChangerTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +531,7 @@
 				F7C133311F5A7CC3001C3C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7C133321F5A7CC3001C3C55 /* Build configuration list for PBXNativeTarget "VoiceChangerUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +540,7 @@
 				F7C133341F5A7CC3001C3C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

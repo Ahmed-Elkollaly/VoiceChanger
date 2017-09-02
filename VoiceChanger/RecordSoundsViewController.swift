@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsViewController.swift
 //  VoiceChanger
 //
 //  Created by Ahmed El-Kollaly on 9/2/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecordSoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

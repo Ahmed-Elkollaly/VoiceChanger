@@ -16,7 +16,7 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     @IBOutlet weak var recordLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     enum PlayingState {case playing,notPlaying}
-    var playingState :PlayingState = .notPlaying
+    
     var audioRecorder :AVAudioRecorder!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,10 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureUI()
+        configureUI(.notPlaying)
     }
     //Mark -Configure UI
-    func configureUI(){
+    func configureUI(_ playingState:PlayingState){
         switch playingState {
         case .playing:
             recordButton.isEnabled = false
@@ -41,8 +41,7 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
     //Mark -Start Recording
     @IBAction func startRecording(_ sender: Any) {
-        playingState = .playing
-        configureUI()
+        configureUI(.playing)
         
         
         //Create the file URL of the recored audio
@@ -69,8 +68,7 @@ class RecordSoundsViewController: UIViewController,AVAudioRecorderDelegate {
     }
     //Mark - Stop Recording
     @IBAction func stopRecording(_ sender: Any) {
-        playingState = .notPlaying
-        configureUI()
+        configureUI(.playing)
         audioRecorder.stop()
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(false)

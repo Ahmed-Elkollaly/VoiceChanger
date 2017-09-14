@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F7BAED711F5B0A7E00510E87 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */; };
 		F7BAED721F5B140000510E87 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */; };
+		F7BAED741F5B4F8900510E87 /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BAED731F5B4F8900510E87 /* PlaySoundsViewController+Audio.swift */; };
 		F7C133081F5A7CC2001C3C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133071F5A7CC2001C3C55 /* AppDelegate.swift */; };
 		F7C1330A1F5A7CC2001C3C55 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */; };
 		F7C1330D1F5A7CC3001C3C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C1330B1F5A7CC3001C3C55 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		F7BAED731F5B4F8900510E87 /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 		F7C133041F5A7CC2001C3C55 /* VoiceChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C133071F5A7CC2001C3C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C133091F5A7CC2001C3C55 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				F7C133101F5A7CC3001C3C55 /* LaunchScreen.storyboard */,
 				F7C133131F5A7CC3001C3C55 /* Info.plist */,
 				F7BAED701F5B0A7E00510E87 /* PlaySoundsViewController.swift */,
+				F7BAED731F5B4F8900510E87 /* PlaySoundsViewController+Audio.swift */,
 			);
 			path = VoiceChanger;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C1330A1F5A7CC2001C3C55 /* RecordSoundsViewController.swift in Sources */,
+				F7BAED741F5B4F8900510E87 /* PlaySoundsViewController+Audio.swift in Sources */,
 				F7BAED711F5B0A7E00510E87 /* PlaySoundsViewController.swift in Sources */,
 				F7C133081F5A7CC2001C3C55 /* AppDelegate.swift in Sources */,
 			);
